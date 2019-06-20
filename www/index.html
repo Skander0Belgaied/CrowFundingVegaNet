@@ -1,44 +1,157 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" type="text/css" href="../css/firstpage.css">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - Roulette Wheel</title>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 </head>
-<body style="padding-top:21px;">
-	<div class="container">
-        <!-- Page Content goes here -->
-        <div class="row center-align">
-      		<div class="col s12">
-      			<img src="img/logo.png" class="logo">
-      		</div>
-      		<div class="col s12 " style="padding-top:46px;">
-				<img src="img/photo.png" class="logo2">    
-	  		</div>
-	  		<div class="col s12" style="font-size: 13px;color: #8b959a;">
-	  			<h6 class="">Se connecter par Facebook</h6>
-	  		</div>
-    	</div>
-    	<div class="row">
-    		<div class="col s5" style="padding-top:38px;">
-				<svg xmlns="http://www.w3.org/2000/svg" id="artboard-svg" width="164" height="62" viewBox="0 0 164 62"><defs><style>.cls-1, .cls-4 { fill: none; } .cls-2 { clip-path: url(#clip-login_with_email); } .cls-3 { clip-path: url(#clip-path); } .cls-4 { stroke: #000; opacity: 0.35; } .cls-19, .cls-21, .cls-4, .cls-9 { stroke-miterlimit: 10; } .cls-5 { opacity: 0.4; } .cls-6 { fill: rgba(0,0,0,0); } .cls-7 { font-size: 14px; font-family: SegoeUI, Segoe UI; } .cls-8 { letter-spacing: -0.02em; } .cls-12, .cls-15, .cls-20, .cls-9 { fill: #fff; } .cls-19, .cls-21, .cls-9 { stroke: #e2e6ea; } .cls-10 { fill: #979797; } .cls-10, .cls-15 { font-size: 17px; } .cls-10, .cls-18 { font-family: Montserrat-Medium, Montserrat; font-weight: 500; } .cls-11 { fill: #696969; } .cls-11, .cls-16, .cls-17 { font-size: 13px; } .cls-11, .cls-15, .cls-16, .cls-17 { font-family: Montserrat-Regular, Montserrat; } .cls-12, .cls-13 { stroke: #68cefb; stroke-width: 2px; } .cls-13, .cls-14, .cls-18 { fill: #68cefb; } .cls-16 { fill: #8b959a; } .cls-17 { fill: #a3a3a3; letter-spacing: -0.024em; } .cls-19 { fill: #3b5998; } .cls-21 { fill: #dd4f43; } .cls-22 { fill: #64c8ef; } .cls-23 { fill: #062f76; } .cls-24, .cls-25 { stroke: none; } .cls-25 { fill: #e2e6ea; }</style><clipPath id="clip-path"><path d="M0 0h414v44H0z" class="cls-1"/></clipPath><clipPath id="clip-login_with_email"><path d="M0 0h414v736H0z"/></clipPath></defs><g transform="translate(-27 -263)"><g id="login_with_email" class="cls-2" data-name="login with email"><g id="compte_google" data-name="compte google" transform="translate(-6 -208)"><g id="BG-3" data-name="BG" transform="translate(-617 171)"><g id="Rectangle_31-3" class="cls-21" data-name="Rectangle 31" transform="translate(651 301)"><rect width="162" height="60" class="cls-24" rx="5"/><rect width="161" height="59" x=".5" y=".5" class="cls-1" rx="4.5"/></g></g><g id="G" transform="translate(203 1111)"><path id="Tracé_10204" d="M6.7 148.379l-1.049 3.931-3.849.081a15.151 15.151 0 0 1-.111-14.124l3.426.628 1.5 3.406a9.027 9.027 0 0 0 .085 6.077z" class="cls-20" data-name="Tracé 10204" transform="translate(-103 -754.099)"/><path id="Tracé_10205" d="M276.156 208.176a15.119 15.119 0 0 1-5.392 14.621l-4.316-.22-.611-3.813a9.015 9.015 0 0 0 3.879-4.6h-8.088v-5.984h14.528z" class="cls-20" data-name="Tracé 10205" transform="translate(-349.17 -819.877)"/><path id="Tracé_10206" d="M53.3 318.048a15.13 15.13 0 0 1-22.791-4.627l4.9-4.012a9 9 0 0 0 12.963 4.606z" class="cls-20" data-name="Tracé 10206" transform="translate(-131.706 -915.128)"/><path id="Tracé_10207" d="M51.712 3.482l-4.9 4.011a8.994 8.994 0 0 0-13.26 4.71l-4.927-4.034a15.128 15.128 0 0 1 23.087-4.687z" class="cls-20" data-name="Tracé 10207" transform="translate(-129.933 -624)"/></g></g></g></g></svg>	  		</div>
-	  		<div class="col s1" style="padding-top:38px;">
-	  		</div>
-	  		<div class="col s5" style="padding-top:38px;">
-				<svg xmlns="http://www.w3.org/2000/svg" id="artboard-svg" width="164" height="62" viewBox="0 0 164 62"><defs><style>.cls-1, .cls-4 { fill: none; } .cls-2 { clip-path: url(#clip-login_with_email); } .cls-3 { clip-path: url(#clip-path); } .cls-4 { stroke: #000; opacity: 0.35; } .cls-19, .cls-21, .cls-4, .cls-9 { stroke-miterlimit: 10; } .cls-5 { opacity: 0.4; } .cls-6 { fill: rgba(0,0,0,0); } .cls-7 { font-size: 14px; font-family: SegoeUI, Segoe UI; } .cls-8 { letter-spacing: -0.02em; } .cls-12, .cls-15, .cls-20, .cls-9 { fill: #fff; } .cls-19, .cls-21, .cls-9 { stroke: #e2e6ea; } .cls-10 { fill: #979797; } .cls-10, .cls-15 { font-size: 17px; } .cls-10, .cls-18 { font-family: Montserrat-Medium, Montserrat; font-weight: 500; } .cls-11 { fill: #696969; } .cls-11, .cls-16, .cls-17 { font-size: 13px; } .cls-11, .cls-15, .cls-16, .cls-17 { font-family: Montserrat-Regular, Montserrat; } .cls-12, .cls-13 { stroke: #68cefb; stroke-width: 2px; } .cls-13, .cls-14, .cls-18 { fill: #68cefb; } .cls-16 { fill: #8b959a; } .cls-17 { fill: #a3a3a3; letter-spacing: -0.024em; } .cls-19 { fill: #3b5998; } .cls-21 { fill: #dd4f43; } .cls-22 { fill: #64c8ef; } .cls-23 { fill: #062f76; } .cls-24, .cls-25 { stroke: none; } .cls-25 { fill: #e2e6ea; }</style><clipPath id="clip-path"><path d="M0 0h414v44H0z" class="cls-1"/></clipPath><clipPath id="clip-login_with_email"><path d="M0 0h414v736H0z"/></clipPath></defs><g transform="translate(-210 -263)"><g id="login_with_email" class="cls-2" data-name="login with email"><g id="compte_facebook" data-name="compte facebook" transform="translate(-6 -208)"><g id="compte_facebook-2" data-name="compte facebook" transform="translate(-434 171)"><g id="BG-2" class="cls-19" data-name="BG" transform="translate(651 301)"><rect width="162" height="60" class="cls-24" rx="5"/><rect width="161" height="59" x=".5" y=".5" class="cls-1" rx="4.5"/></g><path id="F" d="M25.959 0H4.045A4.043 4.043 0 0 0 0 4.043v21.914A4.043 4.043 0 0 0 4.045 30h10.808l.018-10.72h-2.785a.657.657 0 0 1-.657-.655l-.013-3.456a.657.657 0 0 1 .657-.66h2.78v-3.338c0-3.875 2.367-5.985 5.823-5.985h2.836a.657.657 0 0 1 .657.657v2.914a.657.657 0 0 1-.657.657h-1.74c-1.88 0-2.244.893-2.244 2.2v2.896h4.131a.657.657 0 0 1 .653.735L23.9 18.7a.657.657 0 0 1-.653.58h-3.7L19.528 30h6.431A4.042 4.042 0 0 0 30 25.958V4.043A4.043 4.043 0 0 0 25.959 0z" class="cls-20" transform="translate(716.998 315.995)"/></g></g></g></g></svg>	  		
-			</div>
+<body translate="no">
+<input type="button" value="spin" style="float:left;" id="spin">
+<canvas id="canvas" width="500" height="500"></canvas>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+      var options = ["3 ♥", "1 ♥" , "4 ♥", "2 ♥"];
+
+var startAngle = 0;
+var arc = Math.PI / (options.length / 2);
+var spinTimeout = null;
+
+var spinArcStart = 10;
+var spinTime = 0;
+var spinTimeTotal = 0;
+
+var ctx;
+
+document.getElementById("spin").addEventListener("click", spin);
+
+function byte2Hex(n) {
+  var nybHexString = "0123456789ABCDEF";
+  return String(nybHexString.substr(n >> 4 & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
+}
+
+function RGB2Color(r, g, b) {
+  return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+}
+
+function getColor(item, maxitem) {
+  var phase = 0;
+  var center = 128;
+  var width = 127;
+  var frequency = Math.PI * 2 / maxitem;
+
+  red = Math.sin(frequency * item + 2 + phase) * width + center;
+  green = Math.sin(frequency * item + 0 + phase) * width + center;
+  blue = Math.sin(frequency * item + 4 + phase) * width + center;
+
+  return RGB2Color(red, green, blue);
+}
+
+function drawRouletteWheel() {
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var outsideRadius = 200;
+    var textRadius = 160;
+    var insideRadius = 125;
+
+    ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, 500, 500);
+
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+
+    ctx.font = 'bold 12px Helvetica, Arial';
+
+    for (var i = 0; i < options.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+      var angle = startAngle + i * arc;
+      //ctx.fillStyle = colors[i];
+      var color = ['#67eaca', '#b0f4e6','#28c3d4','#12d3cf'];
+      ctx.fillStyle = color[i];
+
+     // ctx.fillStyle = getColor(i, options.length);
+
+      ctx.beginPath();
+      ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
+      ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
+      //ctx.stroke();
+      ctx.fill();
+
+      ctx.save();
+      ctx.shadowOffsetX = -1;
+      ctx.shadowOffsetY = -1;
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = "rgb(220,220,220)";
+      ctx.fillStyle = "black";
+      ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius,
+      250 + Math.sin(angle + arc / 2) * textRadius);
+      ctx.rotate(angle + arc / 2 + Math.PI / 2);
+      var text = options[i];
+      ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+      ctx.restore();
+    }
+
+    //Arrow
+    window.CP.exitedLoop(0);ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
+    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
+    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
+    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
+    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
+    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.fill();
+  }
+}
+
+function spin() {
+  spinAngleStart = Math.random() * 10 + 10;
+  spinTime = 0;
+  spinTimeTotal = Math.random() * 3 + 4 * 1000;
+  rotateWheel();
+}
+
+function rotateWheel() {
+  spinTime += 30;
+  if (spinTime >= spinTimeTotal) {
+    stopRotateWheel();
+    return;
+  }
+  var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+  startAngle += spinAngle * Math.PI / 180;
+  drawRouletteWheel();
+  spinTimeout = setTimeout('rotateWheel()', 30);
+}
+
+function stopRotateWheel() {
+  clearTimeout(spinTimeout);
+  var degrees = startAngle * 180 / Math.PI + 90;
+  var arcd = arc * 180 / Math.PI;
+  var index = Math.floor((360 - degrees % 360) / arcd);
+  ctx.save();
+  ctx.font = 'bold 30px Helvetica, Arial';
+  var text = options[index];
+  console.log("valeur "+text)
+  ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
+  ctx.restore();
+}
+
+function easeOut(t, b, c, d) {
+  var ts = (t /= d) * t;
+  var tc = ts * t;
+  return b + c * (tc + -3 * ts + 3 * t);
+}
+
+drawRouletteWheel();
+      //# sourceURL=pen.js
+    </script>
 
 
-      <!--JavaScript at end of body for optimized loading-->
-</body>
-</html>
+</body></html>
