@@ -32,16 +32,17 @@
 					<span class="login100-form-title p-b-40">
 						<img src="images/logo.svg">
 					</span>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "email is required">
-						<input class="input100" type="text" name="email" placeholder="email">
-						<span class="focus-input100"></span>
-					</div>
+					<span class="login100-form-title p-b-40" style="font-size: 13px;color: #8b959a;">
+						Se connecter par facebook
+					</span>
 					
 					<div class="validate-input m-b-30" >
 					<button><img src="images/compte_google.svg"></button>
 					<button><img src="images/compte_facebook.svg"></button>
 					</div>
-					
+					<span class="login100-form-title p-b-35" style="font-size: 13px;color: #8b959a;">
+						Ou se connecter par email
+					</span>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "email is required">
 						<input class="input100" type="text" name="email" placeholder="email" id='email' required>
 						<span class="focus-input100"></span>
@@ -106,7 +107,7 @@
 	 
 		// submit form data to api
 	$.ajax({
-		url: "/pfe/projetpfe/CrowFundingVegaNet/www/api/login.php",
+		url: "/pfe/projetpfe/CrowFundingVegaNet/www/rest-api-authentification/api/login.php",
 		type : "POST",
 		contentType : 'application/json',
 		data : form_data,
@@ -117,9 +118,9 @@
 			setCookie("jwt", result.jwt, 1);
 	 
 			// show home page & tell the user it was a successful login
-			showHomePage();
+			window.location.replace("/home.html");
 			
-	 
+
 		},
 		error: function(xhr, resp, text){
 			// on error, tell the user login has failed & empty the input boxes
@@ -150,25 +151,7 @@
 		}
 		return "";
 	}
-	function showHomePage(){
- 
-		// validate jwt to verify access
-		var jwt = getCookie('jwt');
-		$.post("/pfe/projetpfe/CrowFundingVegaNet/www/rest-api-authentification/api/validate_token.php", JSON.stringify({ jwt:jwt })).done(function(result) {
-	 
-		  // if valid, show homepage
-	
-	
-		  window.location.replace("home.html");
-	
-		})
-	 
-	   // show login page on error
-	.fail(function(result){
-		window.location.replace("/connexionmail.html");
-		$('#response').html("<div class='alert alert-danger'>vous devez etre connecter.</div>");
-	});
-	}
+
 	$.fn.serializeObject = function(){
  
 		var o = {};
