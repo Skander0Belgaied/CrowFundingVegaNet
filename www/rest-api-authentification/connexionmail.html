@@ -107,7 +107,7 @@
 	 
 		// submit form data to api
 	$.ajax({
-		url: "/pfe/projetpfe/CrowFundingVegaNet/www/api/login.php",
+		url: "/pfe/projetpfe/CrowFundingVegaNet/www/rest-api-authentification/api/login.php",
 		type : "POST",
 		contentType : 'application/json',
 		data : form_data,
@@ -118,9 +118,9 @@
 			setCookie("jwt", result.jwt, 1);
 	 
 			// show home page & tell the user it was a successful login
-			showHomePage();
+			window.location.replace("/home.html");
 			
-	 
+
 		},
 		error: function(xhr, resp, text){
 			// on error, tell the user login has failed & empty the input boxes
@@ -151,25 +151,7 @@
 		}
 		return "";
 	}
-	function showHomePage(){
- 
-		// validate jwt to verify access
-		var jwt = getCookie('jwt');
-		$.post("/pfe/projetpfe/CrowFundingVegaNet/www/rest-api-authentification/api/validate_token.php", JSON.stringify({ jwt:jwt })).done(function(result) {
-	 
-		  // if valid, show homepage
-	
-	
-		  window.location.replace("home.html");
-	
-		})
-	 
-	   // show login page on error
-	.fail(function(result){
-		window.location.replace("/connexionmail.html");
-		$('#response').html("<div class='alert alert-danger'>vous devez etre connecter.</div>");
-	});
-	}
+
 	$.fn.serializeObject = function(){
  
 		var o = {};
