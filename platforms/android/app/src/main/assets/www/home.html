@@ -17,7 +17,15 @@
   <link rel="stylesheet" href="vendors/flat-icon/font/flaticon.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -77,7 +85,7 @@
     <div class="container text-center">
       <span class="hero-banner-icon"><i class="fa fa-heartbeat"></i></span>
       <h1>Tournez la roue et tentez Votre Chance</h1>
-      <a class="button button-header" href="#">Jouez</a>
+      <a class="button button-header" href="spinner.html">Jouez</a>
     </div>
   </section>
   <!--================Hero Banner Area End =================-->
