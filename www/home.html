@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ummet Event - Home</title>
+  <title></title>
   <link rel="icon" href="img/Fevicon.png" type="image/png">
 
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
@@ -17,8 +17,10 @@
   <link rel="stylesheet" href="vendors/flat-icon/font/flaticon.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 </head>
-<body>
+<body onload="sweetalert2()">
 
   <!--================ Header Menu Area start =================-->
   <header class="header_area">
@@ -46,20 +48,7 @@
                   <li class="nav-item"><a class="nav-link" href="price.html">Orphelin</a>                  
                 </ul>
               </li>
-
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog Single</a></li>
-                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
-                </ul>
-              </li>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-
-            <ul class="nav-right text-center text-lg-right py-4 py-lg-0">
-              <li><a href="#">Get Ticket</a></li>
             </ul>
           </div> 
         </div>
@@ -72,8 +61,8 @@
   <!--================Hero Banner Area Start =================-->
   <section class="hero-banner">
     <div class="container text-center">
-      <span class="hero-banner-icon"><i class="fa fa-heartbeat"></i></span>
-      <h1>Tournez la roue et tentez Votre Chance</h1>
+      <span class="hero-banner-icon"><span style="color:white;">3   </span><i class="fa fa-heartbeat"></i></span>
+      <h1>Tentez Votre Chance et tournez la roue pour avoir une autrechance </h1>
       <a class="button button-header" href="spinner.html">Jouez</a>
     </div>
   </section>
@@ -81,50 +70,7 @@
 
 
 
-  <!--================ Join section Start =================-->
-  <section class="section-margin">
-    <div class="container">
-      <div class="section-intro text-center pb-98px">
-        <p class="section-intro__title">Join the event</p>
-        <h2 class="primary-text">Why Join Ummet</h2>
-        <img src="img/home/section-style.png" alt="">
-      </div>
-
-
-      <div class="d-lg-flex justify-content-between">
-        <div class="card-feature mb-5 mb-lg-0">
-          <div class="feature-icon">
-            <i class="flaticon-prize"></i>
-          </div>
-          <h3>Always First Service</h3>
-          <p>His likeness beast moved domini moved above meat all fly blessed greater creepeth you itself living room </p>
-        </div>
-
-        <div class="card-feature mb-5 mb-lg-0">
-          <div class="feature-icon">
-            <i class="flaticon-earth-globe"></i>
-          </div>
-          <h3>International Business</h3>
-          <p>His likeness beast moved domini moved above meat all fly blessed greater creepeth you itself living room </p>
-        </div>
-
-        <div class="card-feature mb-5 mb-lg-0">
-          <div class="feature-icon">
-            <i class="flaticon-sing"></i>
-          </div>
-          <h3>World Great Speaker</h3>
-          <p>His likeness beast moved domini moved above meat all fly blessed greater creepeth you itself living room </p>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 text-center">
-          <a class="button mr-3 mb-2" href="#">Learn More</a>
-          <a class="button mb-2" href="#">Buy Ticket</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--================ Join section End =================-->
+  
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -136,7 +82,18 @@
   <script src="js/jquery.magnific-popup.min.js"></script> 
   <script src="js/main.js"></script>
 
-
+  <script type="text/javascript">
+    function sweetalert2()
+    {
+    Swal.fire({
+  position: 'top-end',
+  type: 'success',
+  title: "vous avez vos 3 chance pour aujord'hui",
+  showConfirmButton: false,
+  timer: 1500
+})
+    }
+  </script>
 
 </body>
 </html>
