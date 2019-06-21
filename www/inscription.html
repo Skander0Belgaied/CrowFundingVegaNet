@@ -65,38 +65,36 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-40" style="font-style: ">
+					<div id="response"></div>
+				<form class="login100-form validate-form flex-sb flex-w" id='sign_up_form'>
+					<span class="login100-form-title p-b-40" style="font-style:">
 						<span style="color: #68cefb;">INSCRI</span><span style="color: #062f76;">PTION</span>
 					</span>
-				
+
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "nom is required">
-						<input class="input100 grey-border" type="text" name="nom" placeholder="Nom">
+						<input class="input100 grey-border" type="text" name="nom" placeholder="Nom" id="nom">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "prénom is required">
-						<input class="input100 grey-border" type="text" name="prénom" placeholder="Prénom">
+						<input class="input100 grey-border" type="text" name="prenom" placeholder="Prenom" id="prenom">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "date de naissance is required">
-						<input class="input100 grey-border" type="date" name="datedenaissance" placeholder="Date De Naissance">
+						<input class="input100 grey-border" type="date" name="datedeNaissance" id="datedeNaissance" placeholder="Date De Naissance" id="datenaissance">
 						<span class="focus-input100"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "lieu de résidence is required">
-						<input class="input100 grey-border" type="text" name="lieuderésidence" placeholder="Lieu De Résidence">
+						<input class="input100 grey-border" type="text" name="lieuResidence" id="lieuResidence" placeholder="Lieu De Résidence">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "email is required">
-						<input class="input100 grey-border" type="mail" name="email" placeholder="Email">
+						<input class="input100 grey-border" type="mail" name="email" id="email" placeholder="Email">
 						<span class="focus-input100"></span>
 					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Réecrire l'email is required">
-						<input class="input100 grey-border" type="mail" name="emailconf" placeholder="Réecrire l'email">
-						<span class="focus-input100"></span>
-					</div>
+					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "mot de passe is required">
-						<input class="input100 grey-border" type="password" name="pwd" placeholder="Mot De Passe">
+						<input class="input100 grey-border" type="password" name="password" id="password" placeholder="Mot De Passe">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="col s12">
@@ -117,7 +115,85 @@
 	
 <!--===============================================================================================-->
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
+<script>
+		$(document).ready(function(){
+
+			function setCookie(cname, cvalue, exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				var expires = "expires="+ d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+
+			$(document).on('submit', '#sign_up_form', function(){
+ 
+				// get form data
+				var sign_up_form=$(this);
+				var form_data=JSON.stringify(sign_up_form.serializeObject());
+			 
+				// submit form data to api
+				$.ajax({
+					url: "/pfe/projetpfe/CrowFundingVegaNet/www/api/create_user.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : form_data,
+					success : function(result) {
+						// if response is a success, tell the user it was a successful sign up & empty the input boxes
+						showloginpage();
+					},
+					error: function(xhr, resp, text){
+						// on error, tell the user sign up failed
+						$('#response').html("<div class='alert alert-danger'>Impossible de créer un compte.</div>");
+					}
+				});
+			 
+				return false;
+			});
+			function showloginpage(){
+				window.location.replace("/connexionmail.html");
+			}
+			function clearResponse(){
+				$('#response').html('');
+			}
+
+			function getCookie(cname){
+				var name = cname + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				var ca = decodedCookie.split(';');
+				for(var i = 0; i <ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' '){
+						c = c.substring(1);
+					}
+			 
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+
+
+			$.fn.serializeObject = function(){
+ 
+				var o = {};
+				var a = this.serializeArray();
+				$.each(a, function() {
+					if (o[this.name] !== undefined) {
+						if (!o[this.name].push) {
+							o[this.name] = [o[this.name]];
+						}
+						o[this.name].push(this.value || '');
+					} else {
+						o[this.name] = this.value || '';
+					}
+				});
+				return o;
+			};
+
+		});
+</script>	
+<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -133,7 +209,7 @@
 	<script type="text/javascript">
 		var email=document.getElementsByName(email);
 		var emailconf=document.getElementsByName(emailconf);
-		if (email != emailconf) { 
+		if (email != emailconf) {
 			//suitealerte
 		}
 

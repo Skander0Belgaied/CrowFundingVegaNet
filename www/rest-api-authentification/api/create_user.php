@@ -27,6 +27,8 @@ $user->prenom = $data->prenom;
 $user->email = $data->email;
 $user->password = $data->password;
 $user->num_tel = "+21625874798";
+$user->lieuResidence = $data->lieuResidence;
+$user->dateNaissance = $date->dateNaissance;
 
 // create the user
 if(

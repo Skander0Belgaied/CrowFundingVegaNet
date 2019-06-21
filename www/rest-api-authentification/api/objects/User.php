@@ -15,6 +15,8 @@ class User{
     public $password;
     public $imgUrl;
     public $num_tel;
+   public $lieuResidence;
+   public $dateNaissance;
     // constructor
     public function __construct($db){
         $this->conn = $db;
@@ -30,7 +32,9 @@ class User{
                             prenom = :prenom,
                             email = :email,
                             password = :password,
-                            num_tel = :num_tel
+                            num_tel = :num_tel,
+                            lieuResidence = :lieuResidence,
+                            dateNaissance = :dateNaissance
                             ";
             
                 // prepare the query
@@ -41,12 +45,16 @@ class User{
                 $this->prenom=htmlspecialchars(strip_tags($this->prenom));
                 $this->email=htmlspecialchars(strip_tags($this->email));
                 $this->password=htmlspecialchars(strip_tags($this->password));
+                $this->lieuResidence=htmlspecialchars(strip_tags($this->lieuResidence));
+                $this->dateNaissance=htmlspecialchars(strip_tags($this->dateNaissance));
             
                 // bind the values
                 $stmt->bindParam(':nom', $this->nom);
                 $stmt->bindParam(':prenom', $this->prenom);
                 $stmt->bindParam(':email', $this->email);
                 $stmt->bindParam(':num_tel', $this->num_tel);
+                $stmt->bindParam(':lieuResidence', $this->lieuResidence);
+                $stmt->bindParam(':dateNaissance', $this->num_tel);
             
                 // hash the password before saving to database
                 $password_hash = password_hash($this->password, PASSWORD_BCRYPT);
@@ -66,7 +74,7 @@ class User{
 function emailExists(){
  
     // query to check if email exists
-    $query = "SELECT idUser, nom, prenom, password, num_tel
+    $query = "SELECT idUser, nom, prenom, password, num_tel,lieuResidence, dateNaissance
             FROM " . $this->table_name . "
             WHERE email = ?
             LIMIT 0,1";
@@ -98,6 +106,8 @@ function emailExists(){
         $this->prenom = $row['prenom'];
         $this->password = $row['password'];
         $this->num_tel = $row['num_tel'];
+        $this->lieuResidence = $row['lieuResidence'];
+        $this->numdateNaissance_tel = $row['dateNaissance'];
         // return true because email exists in the database
         return true;
     }
